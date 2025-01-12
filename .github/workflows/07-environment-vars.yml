@@ -33,6 +33,7 @@ jobs:
       - name: Output information
         run: echo "..."
   deploy:
+    environment: testing
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -42,3 +43,4 @@ jobs:
           echo "MONGODB_PASSWORD: ${{ env.MONGODB_PASSWORD }}"
           echo "MONGODB_CLUSTER_ADDRESS: ${{ env.MONGODB_CLUSTER_ADDRESS }}"
           echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
+          echo "SECRETS MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}"
