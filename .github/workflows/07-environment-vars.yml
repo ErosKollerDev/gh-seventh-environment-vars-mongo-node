@@ -5,10 +5,10 @@ on:
       - main
       - dev
 env:
-  MONGODB_DB_NAME: gha-demo
-  MONGODB_CLUSTER_ADDRESS: cluster0.1yjyr.mongodb.net
-  MONGODB_PASSWORD: 123456Eroskollertestenota_passworD
-  MONGODB_USERNAME: zero
+  MONGODB_DB_NAME: ${{secrets.MONGODB_DB_NAME}}
+  MONGODB_CLUSTER_ADDRESS: ${{secrets.MONGODB_CLUSTER_ADDRESS}}
+  MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
+  MONGODB_USERNAME: ${{secrets.MONGODB_USERNAME}}
   PORT: 8080
 jobs:
   test:
